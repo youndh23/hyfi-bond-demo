@@ -1,0 +1,26 @@
+:root{font-family:Inter,"Malgun Gothic","Apple SD Gothic Neo",sans-serif;color:#192d38;background:#f4f6f5;font-synthesis:none;--green:#12614b;--muted:#536660;--line:#d3dcd7}
+*{box-sizing:border-box} body{margin:0} .wrap{max-width:1160px;margin:auto;padding:0 38px}
+header{background:#172f30;color:#edf7f2}.mast{min-height:65px;display:flex;align-items:center;gap:16px}
+.brand{font-size:26px;letter-spacing:-1.5px}.mast>span{font-size:13px;color:#cbdad3;border-left:1px solid #72847d;padding-left:15px}
+nav{margin-left:auto;display:flex;gap:8px}button,select,input{font:inherit}button,select,summary{cursor:pointer}
+nav button{font-size:14px;padding:11px 16px;border:0;color:#cad8d3;background:transparent;border-radius:4px}
+nav button[aria-pressed=true]{color:white;background:#34534a;font-weight:bold}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #d29321;outline-offset:3px}
+.heading{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:46px 0 22px}
+.eyebrow{font-size:13px;color:var(--green);font-weight:700}.heading h1{font-size:clamp(30px,4vw,46px);letter-spacing:-2.5px;line-height:1.24;margin:11px 0}
+p{line-height:1.65;color:var(--muted);font-size:14px}a{color:var(--green);font-weight:bold;font-size:14px;text-underline-offset:4px}
+.analysis{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(250px,1fr);gap:16px}
+h2{font-size:19px;letter-spacing:-.65px;margin:0 0 16px}
+.result,.paper,aside,details{background:white;border:1px solid var(--line);border-radius:8px}
+.result{padding:24px 28px;background:#e5efea;border-color:#c1d5c9}
+.filters,form{display:flex;gap:16px;align-items:end;flex-wrap:wrap}label{display:grid;gap:6px;font-size:12px;font-weight:bold;color:var(--muted)}
+select,input{border:1px solid #afbeb6;border-radius:4px;background:#fff;color:#243d32;padding:8px 9px;font-size:14px;min-height:38px}
+.result h2{font-size:16px;margin-top:27px}.amount{font-size:clamp(26px,4vw,43px);letter-spacing:-1.6px;font-weight:750;font-variant-numeric:tabular-nums;color:#0d4736}
+.amount small{font-size:.47em;margin-left:6px;letter-spacing:0}.formula{margin:8px 0 1px;font-size:13px}
+aside,.paper,details{padding:22px 24px}aside h2{margin-bottom:8px}.metric{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-bottom:1px solid var(--line);padding:9px 0;font-size:13px}.metric b{font-variant-numeric:tabular-nums;white-space:nowrap}small{font-size:11px;color:var(--muted)}aside p,.footnote{font-size:12px;margin:11px 0 0}.paper,details{margin-top:16px}.sectiontitle{display:flex;align-items:baseline;justify-content:space-between;gap:12px}.sectiontitle span{font-size:12px;color:var(--muted)}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:565px}th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:right;font-size:14px;font-variant-numeric:tabular-nums}
+thead th{background:#f4f7f5;color:#506059;font-size:12px}th:first-child,td:first-child{text-align:left}
+tr.match{background:#edf5f0;color:#10563f}tr.match th{box-shadow:inset 3px 0 #297455}tr.match td:nth-child(2),tr.match td:nth-child(3){font-weight:bold}
+details summary{color:#234d3c;font-size:14px;font-weight:bold}details li{font-size:13px;line-height:1.8}
+.primary{background:var(--green);border:0;border-radius:4px;color:#fff;padding:10px 16px;font-weight:700}.quote-answer{font-size:24px;font-weight:bold;color:#173d2c}footer.wrap{display:flex;justify-content:space-between;margin:26px auto 0;padding-top:14px;padding-bottom:22px;color:var(--muted);font-size:12px}.sr{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden}
+@media(max-width:760px){.wrap{padding:0 16px}.mast{gap:8px}.mast>span{display:none}nav{gap:3px}.heading{padding:28px 0 16px;align-items:start;flex-direction:column;gap:3px}.analysis{grid-template-columns:1fr}.result,.paper,aside,details{padding:18px}.sectiontitle{align-items:start;flex-direction:column;gap:0;margin-bottom:10px}.sectiontitle h2{margin-bottom:4px}.filters,form{gap:9px}.heading p{margin:9px 0}.result h2{margin-top:20px}}

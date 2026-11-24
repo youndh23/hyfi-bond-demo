@@ -1,0 +1,4 @@
+pypdf==6.21.4
+tokenizers==0.22.1
+onnxruntime==1.23.2
+numpy==2.2.6

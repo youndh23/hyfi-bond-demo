@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HY FI · 채권운용 실습</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="evidence.js"></script>
+  <script defer src="finance.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header><div class="wrap mast"><strong class="brand">HY FI</strong><span>채권운용 실습</span>
+    <nav aria-label="분석 화면"><button aria-pressed="true" data-panel="filing">공시 분석</button><button aria-pressed="false" data-panel="quotes">장외호가</button></nav>
+  </div></header>
+  <main class="wrap">
+    <section id="filing">
+      <div class="heading"><div><div class="eyebrow">삼성전기 · 009150</div><h1>차입금과 부채 만기</h1><p>별도 감사보고서의 만기표에서 1년 안에 지급할 계약상 현금흐름을 확인합니다.</p></div>
+      <a id="source" target="_blank" rel="noopener noreferrer">공시 원문 열기 ↗</a></div>
+      <div class="analysis">
+        <section class="result"><div class="filters">
+          <label>보고기간 말<select id="period"><option value="2025-12-31">2025.12.31</option><option value="2024-12-31">2024.12.31</option></select></label>
+          <label>조회할 항목<select id="item"></select></label>
+        </div><div aria-live="polite"><h2 id="question"></h2><div class="amount" id="answer"></div><p class="formula" id="formula"></p></div></section>
+        <aside><h2>모델 입력량</h2><div class="metric"><span>PDF 원문 <small id="pages"></small></span><b id="original"></b></div>
+          <div class="metric"><span>근거 행 색인 <small>최초 1회</small></span><b id="index-size"></b></div>
+          <div class="metric"><span>선택한 질문 <small>벡터 생성 시</small></span><b id="query-size"></b></div>
+          <p>같은 토크나이저로 센 값입니다. 이 화면은 저장된 벡터를 사용해 로컬에서 검색합니다.</p></aside>
+      </div>
+      <section class="paper"><div class="sectiontitle"><h2>근거가 된 만기표</h2><span id="table-note"></span></div>
+        <div class="scroll"><table><caption class="sr">금융부채 잔존만기별 계약상 현금흐름, 천원</caption><thead id="head"></thead><tbody id="rows"></tbody></table></div>
+        <p class="footnote">1년 이내 금액은 첫 두 만기 구간의 합계입니다. 원표에서 금액이 없는 구간은 대시로 표시됩니다.</p>
+      </section>
+      <details><summary>근거 행을 선택한 과정</summary><p>선택한 기간의 네 행을 질문과의 코사인 유사도 순으로 정렬합니다. 질문의 회계 항목과 행 이름이 일치할 때만 금액을 계산합니다.</p><ol id="ranking"></ol></details>
+    </section>
+    <section id="quotes" hidden>
+      <div class="heading"><div><div class="eyebrow">가상 종목 · 연습 데이터</div><h1>장외호가 해석</h1><p>축약된 금리를 복원하고 매수·매도 방향과 세트호가 구성 값을 확인합니다.</p></div></div>
+      <div class="paper quote-form"><form id="quote-form">
+        <label>기준금리 정수부 (%)<select id="base"><option>3</option><option>4</option><option>2</option></select></label>
+        <label>연습용 호가 원문<input id="quote" value="가상A 79/795사자" maxlength="80" autocomplete="off"></label>
+        <button class="primary" type="submit">호가 해석</button>
+      </form><p class="footnote">예시 &nbsp; 가상A 79/795사자 &nbsp; · &nbsp; 가상B 82- &nbsp; · &nbsp; 가상A 79</p></div>
+      <div class="paper" aria-live="polite"><h2>해석 결과</h2><p id="quote-result" class="quote-answer"></p><p id="quote-detail"></p></div>
+    </section>
+  </main>
+  <footer class="wrap"><span>HY FI</span><span>금융인공지능실무 · 수업용 공개 버전</span></footer>
+</body>
+</html>
